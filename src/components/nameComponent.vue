@@ -22,6 +22,13 @@
       <p>
         fullname {{ cfullName }}
       </p>
+
+      <h3>色を表示するよ</h3>
+      <ul>
+        <li v-for="(color, name) in colors" :key="name">
+          {{ color.name }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -36,15 +43,31 @@ export default {
       fullName: "",
       cfirstName: "",
       clastName: "",
+      colors: [
+        {name: "red"},
+        {name: "green"},
+        {name: "blue"}
+      ]
     };
   },
   // ウォッチ
   watch:{
+    // 対象に変化があった場合に
     firstName(value){
       this.fullName = `${value} ${this.lastName}`
     },
     lastName(value){
       this.fullName = `${this.firstName} ${value}`
+    },
+    colors: {
+      handler: function(newValue, oldValue){
+        console.log("update!");
+        console.log(`new ${newValue} old${oldValue}`,
+        // JSON.stringifyはjsの値をJSON文字列へ変更する
+        JSON.stringify(newValue, null, "\t"),
+        JSON.stringify(oldValue, null, "\t"))
+      },
+      // deep: true
     },
   },
   // 算出プロパティ
