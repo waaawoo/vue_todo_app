@@ -1,7 +1,11 @@
 <template>
   <div>
     <h2>ビットコイン価格表示</h2>
-    <p> {{bpi}} </p>
+    <ul>
+      <li v-for="(rate, currency) in bpi" :key="currency">
+        {{ currency }} {{ rate.rate_float }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,12 +20,19 @@ export default({
     }
   },
   mounted: function(){
-    axios.get(" https://api.coindesk.com/v1/bpi/currentprice/CNY.json Sample JSON")
+    axios.get("https://api.coindesk.com/v1/bpi/currentprice.json")
     .then(function(response){
-      console.log(response.data.bpi.USD.rate_float);
-      this.bpi = response.data.bpi.USD.rate_float
+      console.log(response.data)
+      this.bpi = response.data.bpi
       // vueインスタンスのthisを指定するためにbindする必要がある
     }.bind(this))
+    // エラーのキャッチ
+    .catch(function(error){
+      console.log(error)
+    })
+  },
+  methodes: {
+
   }
 });
 
