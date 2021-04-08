@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <h2>TODO List</h2>
-    <form action="">
-      <input type="text">
-      <button @click="addItemClick">Add</button>
-    </form>
-  </div>
+  <Form></Form>
 </template>
 
 <script>
+  import Form from "./components/Form.vue";
+  export default{
+    data(){
 
+    },
+    components: {
+      Form,
+    },
+  };
 </script>
 
 <style>
