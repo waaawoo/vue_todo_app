@@ -17,6 +17,20 @@
     <p>税込み価格</p>
     <input type="text" v-model="basePrice">
     <input type="text" v-model="texIncludedPrice">
+
+    <p>computedとmethodのランダム表示</p>
+    <ol>
+      <!-- キャッシュされるので同じ値 -->
+      <li> {{computedNumer}} </li>
+      <li> {{computedNumer}} </li>
+      <li> {{computedNumer}} </li>
+    </ol>
+    <ol>
+      <!-- キャッシュされないので全て違う値 -->
+      <li> {{methodsNumber()}} </li>
+      <li> {{methodsNumber()}} </li>
+      <li> {{methodsNumber()}} </li>
+    </ol>
   </div>
 </template>
 
@@ -43,13 +57,18 @@ export default ({
       set: function(texIncludedPrice){
         this.basePrice = Math.ceil(texIncludedPrice / 1.10)
       }
-
+    },
+    computedNumer(){
+      return Math.random()
     }
   },
   methods: {
     clickChange(){
       this.message = this.message.split("").reverse().join('');
     },
+    methodsNumber(){
+      return Math.random()
+    }
   },
   // ローカルフィルター
   filters:{
