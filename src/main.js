@@ -21,4 +21,6 @@ Vue.filter('readMore', function(text, length, suffix){
 new Vue({
   el: "#app",
   render: h => h(App),
+  methods:{
+  }
 })

@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <h2>ウォッチャー</h2>
-    <p>{{message}}</p>
-    <p>
-      <input type="text" v-model="message">
-    </p>
-    <p>新しい入力 {{ newMessage }} </p>
-    <p>古い入力 {{ old }} </p>
+  <dir>
+    <button @click="showChange">Watchを表示</button>
+    <div v-if="show">
+      <h2>ウォッチャー</h2>
+      <p>{{message}}</p>
+      <p>
+        <input type="text" v-model="message">
+      </p>
+      <p>新しい入力 {{ newMessage }} </p>
+      <p>古い入力 {{ old }} </p>
 
-    <h2>距離の出力</h2>
-    <p><input type="text" v-model="km">km</p>
-    <p><input type="text" v-model="m">m</p>
-    <p><input type="text" v-model="mm">mm</p>
-  </div>
+      <h2>距離の出力</h2>
+      <p><input type="text" v-model="km">km</p>
+      <p><input type="text" v-model="m">m</p>
+      <p><input type="text" v-model="mm">mm</p>
+    </div>
+  </dir>
 </template>
 
 <script>
@@ -26,6 +29,7 @@ export default {
       km: 0,
       m: 0,
       mm: 0,
+      show: false
     };
   },
   watch: {
@@ -55,6 +59,9 @@ export default {
 
   },
   methods: {
+    showChange(){
+      return this.show = !this.show
+    },
 
   },
 };
