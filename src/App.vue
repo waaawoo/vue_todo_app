@@ -4,6 +4,8 @@
     <BitCoin></BitCoin>
     <Directive></Directive>
     <Watch></Watch>
+    <Name></Name>
+
   </div>
 </template>
 
@@ -12,6 +14,7 @@
   import BitCoin from "./components/BitCoinComponent";
   import Directive from "./components/DirectiveComponent";
   import Watch from "./components/WatchComponent"
+  import Name from "./components/nameComponent"
 
   export default{
     data(){
@@ -22,6 +25,7 @@
       BitCoin,
       Directive,
       Watch,
+      Name,
     },
   };
 </script>
