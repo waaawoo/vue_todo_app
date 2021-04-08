@@ -18,7 +18,6 @@
         <button @click="deleteItem(index)">削除</button>
       </li>
     </ul>
-    <pre>{{$data}}</pre>
   </div>
 </template>
 
