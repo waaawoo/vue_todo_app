@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h2>ビットコイン価格表示</h2>
+    <h2>本日のビットコイン価格表示</h2>
     <ul>
       <li v-for="(rate, currency) in bpi" :key="currency">
-        {{ currency }} {{ rate.rate_float }}
+        <!-- |の後にfilterを設置 -->
+        {{ currency }} {{ rate.rate_float | currencyDecimal }}
       </li>
     </ul>
   </div>
@@ -30,6 +31,12 @@ export default({
     .catch(function(error){
       console.log(error)
     })
+  },
+  filters:{
+    currencyDecimal(value){
+      // toFixed 小数点以下のけた数を指定
+      return value.toFixed(2)
+    }
   },
   methodes: {
 
