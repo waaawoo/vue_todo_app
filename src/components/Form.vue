@@ -11,7 +11,8 @@
     <ul>
       <!-- v-forはkeyを指定する必要がある -->
       <li v-for="(todo, index) in todos" :key="index">
-        {{index + 1}}:{{todo.item}}
+        <!-- 完了時に下線を入れるクラスを設定 -->
+        <span v-bind:class="{ done: todo.isDone}">{{index + 1}}:{{todo.item}}</span>
         <!--  -->
         <input type="checkbox" v-model="todo.isDone">
       </li>
@@ -53,3 +54,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+div{
+  text-align: center;
+  }
+  li{
+    list-style: none;
+  }
+  li > span.done{
+    text-decoration: line-through;
+  }
+  /* タスクが完了済みなら線を引く */
+</style>
