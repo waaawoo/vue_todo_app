@@ -9,7 +9,6 @@
       <Directive></Directive>
       <Watch class="watch"></Watch>
       <Name></Name>
-      <QiitaApi></QiitaApi>
     </div>
   </div>
 </template>
