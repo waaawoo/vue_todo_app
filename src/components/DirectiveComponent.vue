@@ -13,6 +13,10 @@
 
     <h2>長文を引数で制御</h2>
     {{ text | readMore(20, "...")}}
+
+    <p>税込み価格</p>
+    <input type="text" v-model="basePrice">
+    <input type="text" v-model="texIncludedPrice">
   </div>
 </template>
 
@@ -26,6 +30,19 @@ export default ({
       price: 19800,
       jpyPrice: 28900,
       text: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.",
+      basePrice: 100,
+
+    }
+  },
+  computed: {
+    //
+    texIncludedPrice:{
+      get: function(){
+        return parseInt(this.basePrice * 1.10)
+      },
+      set: function(texIncludedPrice){
+        this.basePrice = Math.ceil(texIncludedPrice / 1.10)
+      }
 
     }
   },
