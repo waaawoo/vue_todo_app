@@ -15,6 +15,7 @@
         <span v-bind:class="{ done: todo.isDone}">{{index + 1}}:{{todo.item}}</span>
         <!--  -->
         <input type="checkbox" v-model="todo.isDone">
+        <button @click="deleteItem(index)">削除</button>
       </li>
     </ul>
     <pre>{{$data}}</pre>
@@ -50,6 +51,12 @@ export default {
       this.todos.push(todo);
       // 入力後入力をからにする
       this.newItem = "";
+    },
+    // 配列から削除
+    deleteItem(index){
+      // alert(index);
+      // splice 第一引数に削除するindex, 第二引数に削除する長さを記載
+      this.todos.splice(index, 1);
     }
   }
 }
