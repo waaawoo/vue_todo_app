@@ -10,7 +10,11 @@
     <!-- リスト表示 -->
     <ul>
       <!-- v-forはkeyを指定する必要がある -->
-      <li v-for="(todo, index) in todos" :key="index">{{index + 1}}:{{todo.item}}</li>
+      <li v-for="(todo, index) in todos" :key="index">
+        {{index + 1}}:{{todo.item}}
+        <!--  -->
+        <input type="checkbox" v-model="todo.isDone">
+      </li>
     </ul>
     <pre>{{$data}}</pre>
   </div>
@@ -37,7 +41,9 @@ export default {
 
       // alert();
       let todo = {
-        item: this.newItem
+        item: this.newItem,
+        // 完了管理
+        isDone: false,
       };
       // TODOを配列へ格納
       this.todos.push(todo);
