@@ -22,13 +22,13 @@
     </ul>
 
     <div>
-      <BitCoinComponent></BitCoinComponent>
+
     </div>
   </div>
 </template>
 
 <script>
-import BitCoinComponent from "./BitCoinComponent.vue";
+
 
 export default {
   data() {
@@ -67,7 +67,7 @@ export default {
     },
   },
   components: {
-      BitCoinComponent,
+
     },
 };
 </script>
