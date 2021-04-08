@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>本日のビットコイン価格表示</h2>
-    <ul>
+    <ul v-cloak>
       <li v-for="(rate, currency) in bpi" :key="currency">
         <!-- |の後にfilterを設置 -->
         {{ currency }} {{ rate.rate_float | currencyDecimal }}
@@ -46,5 +46,8 @@ export default({
 </script>
 
 <style scope>
-
+/* 一瞬チラつく表示を防止 */
+  [v-cloak]{
+    display: none;
+  }
 </style>
