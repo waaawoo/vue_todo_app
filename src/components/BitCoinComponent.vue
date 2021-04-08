@@ -6,12 +6,18 @@
         Error
       </section>
       <section v-else>
-        <ul v-cloak>
-        <li v-for="(rate, currency) in bpi" :key="currency">
-          <!-- |の後にfilterを設置 -->
-          {{ currency }} {{ rate.rate_float | currencyDecimal }}
-        </li>
-      </ul>
+        <!-- ローディングの表示 -->
+        <div v-if="loading">
+          Loading...
+        </div>
+        <div v-else>
+          <ul v-cloak>
+            <li v-for="(rate, currency) in bpi" :key="currency">
+              <!-- |の後にfilterを設置 -->
+              {{ currency }} {{ rate.rate_float | currencyDecimal }}
+            </li>
+          </ul>
+        </div>
       </section>
       </div>
       <button @click="change" v-if="!bitCoinFlg">表示</button>
@@ -25,9 +31,14 @@ import axios from "axios"
 export default({
   data(){
     return{
+      // APIのデータ格納用
       bpi: null,
+      // 通信判定
       hasError: false,
+      // データ表示用
       bitCoinFlg: false,
+      // ロード判定
+      loading: true,
     }
   },
   methods: {
@@ -47,6 +58,11 @@ export default({
       console.log(error)
       this.hasError = true
     }.bind(this))
+    // ローディング判定 finallyは通信に関することが全て終わった後で呼び出される
+    .finally(function(){
+      this.loading =false
+    }.bind(this))
+
   },
   filters:{
     // 小数点以下の表示を指定
