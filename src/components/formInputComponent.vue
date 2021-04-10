@@ -58,6 +58,22 @@
       <p>
       {{ selecteds }}
       </p>
+      <!-- .lazyについて Ent完了後反映 -->
+      <p>エンターで入力が確定すると表示されます</p>
+      <input type="text" v-model.lazy="message2">
+      <p> {{ message2 }} </p>
+      <hr>
+      <!-- .trim 前後の空白削除 -->
+      <p>スペースがTrimされます</p>
+      <input type="text" v-model.trim="message3">
+      <p> {{ message2 }} </p>
+      <hr>
+      <!-- .number 入力値を数値型へ変換する -->
+      <input type="number" v-model.number="age">
+      <p>
+        ＋１０の値を出力
+        {{ age + 10 }}
+      </p>
     </div>
     <div>
 
@@ -77,6 +93,9 @@ export default {
       color: "",
       selected: "",
       selecteds: [],
+      message2: "",
+      message3: "",
+      age: 0,
     };
   },
   mounted() {
