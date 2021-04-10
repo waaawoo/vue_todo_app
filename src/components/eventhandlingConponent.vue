@@ -1,7 +1,6 @@
 <template>
   <div class="show">
-    <h3>イベントハンドリング</h3>
-    <button @click="showChange">表示する</button>
+    <button @click="showChange">イベントハンドリング表示する</button>
     <div v-show="show">
       <p>数値: {{ num }}</p>
       <p>{{ message }}</p>

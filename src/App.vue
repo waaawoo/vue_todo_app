@@ -15,6 +15,7 @@
     <div class="container">
       <QiitaApi class="qiita"></QiitaApi>
       <Handling></Handling>
+      <FormInput></FormInput>
     </div>
   </div>
 </template>
@@ -28,6 +29,7 @@ import Name from "./components/nameComponent";
 import QiitaApi from "./components/qiitaApiComponent";
 import ClassBinding from "./components/classBinding";
 import Handling from './components/eventhandlingConponent';
+import FormInput from "./components/formInputComponent"
 
 export default {
   data() {},
@@ -39,7 +41,8 @@ export default {
     Name,
     QiitaApi,
     ClassBinding,
-    Handling
+    Handling,
+    FormInput,
   },
 };
 </script>
