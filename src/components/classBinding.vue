@@ -10,6 +10,10 @@
       <button @click="bgColor = !bgColor">背景色が変わるよ</button>
       <p>三項演算子での書き換え</p>
       <p>Hello <span v-bind:class="isLarge ? l : 'text-danger'">おはよう！</span></p>
+
+      <p>Hello <span v-bind:style="{ color: color, 'font-size': `${fontsize}px` }" >インラインスタイル</span> </p>
+
+      <p>Hello <span v-bind:style="styleObject" >スタイルオブジェクト</span> </p>
     </div>
   </div>
 </template>
@@ -22,6 +26,12 @@ export default {
       isLarge: true,
       textColor: true,
       bgColor: true,
+      color: "red",
+      fontsize: 36,
+      styleObject: {
+        color: "green",
+        fontSize: "24px"
+      },
 
       l: {
         large: true,
