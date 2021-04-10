@@ -19,6 +19,7 @@
     </div>
     <div>
       <Transition></Transition>
+      <VueRouter></VueRouter>
     </div>
   </div>
 </template>
@@ -33,7 +34,8 @@ import QiitaApi from "./components/qiitaApiComponent";
 import ClassBinding from "./components/classBinding";
 import Handling from './components/eventhandlingConponent';
 import FormInput from "./components/formInputComponent";
-import Transition from "./components/transition-Component"
+import Transition from "./components/transition-Component";
+import VueRouter from "./components/vueRouterCompornent"
 
 export default {
   data() {},
@@ -49,6 +51,7 @@ export default {
     Handling,
     FormInput,
     Transition,
+    VueRouter,
   },
 };
 </script>
