@@ -8,6 +8,8 @@
       <button @click="isLarge = !isLarge">大きさが変わるよ</button>
       <button @click="textColor = !textColor">文字の色が変わるよ</button>
       <button @click="bgColor = !bgColor">背景色が変わるよ</button>
+      <p>三項演算子での書き換え</p>
+      <p>Hello <span v-bind:class="isLarge ? l : 'text-danger'">おはよう！</span></p>
     </div>
   </div>
 </template>
@@ -20,6 +22,12 @@ export default {
       isLarge: true,
       textColor: true,
       bgColor: true,
+
+      l: {
+        large: true,
+        "bg-gray": true
+      },
+
     };
   },
   mounted() {
@@ -42,5 +50,8 @@ export default {
   }
   .bg{
     background-color: blue ;
+  }
+  .bg-gray{
+    background-color: gray;
   }
 </style>
