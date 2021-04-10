@@ -14,6 +14,12 @@
       <p>Hello <span v-bind:style="{ color: color, 'font-size': `${fontsize}px` }" >インラインスタイル</span> </p>
 
       <p>Hello <span v-bind:style="styleObject" >スタイルオブジェクト</span> </p>
+      <p v-if="toggle">YES</p>
+      <p v-else>NO</p>
+      <button @click="toggleChange">チェンジ</button>
+
+      <h4>v-showでの切り替え</h4>
+      <p v-show="toggle">スタイルにディスプレイNoneを設定する</p>
     </div>
   </div>
 </template>
@@ -37,8 +43,10 @@ export default {
         large: true,
         "bg-gray": true
       },
+      toggle: false,
 
     };
+
   },
   mounted() {
 
@@ -46,6 +54,9 @@ export default {
   methods: {
     showChange(){
       return this.show = !this.show
+    },
+    toggleChange(){
+      this.toggle = !this.toggle
     },
   },
 };
