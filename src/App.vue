@@ -12,7 +12,10 @@
         <ClassBinding></ClassBinding>
       </div>
     </div>
-    <QiitaApi class="qiita"></QiitaApi>
+    <div class="container">
+      <QiitaApi class="qiita"></QiitaApi>
+      <Handling></Handling>
+    </div>
   </div>
 </template>
 
@@ -23,7 +26,8 @@ import Directive from "./components/DirectiveComponent";
 import Watch from "./components/WatchComponent";
 import Name from "./components/nameComponent";
 import QiitaApi from "./components/qiitaApiComponent";
-import ClassBinding from "./components/classBinding"
+import ClassBinding from "./components/classBinding";
+import Handling from './components/eventhandlingConponent';
 
 export default {
   data() {},
@@ -35,6 +39,7 @@ export default {
     Name,
     QiitaApi,
     ClassBinding,
+    Handling
   },
 };
 </script>
