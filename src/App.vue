@@ -17,6 +17,9 @@
       <Handling></Handling>
       <FormInput></FormInput>
     </div>
+    <div>
+      <Transition></Transition>
+    </div>
   </div>
 </template>
 
@@ -29,10 +32,12 @@ import Name from "./components/nameComponent";
 import QiitaApi from "./components/qiitaApiComponent";
 import ClassBinding from "./components/classBinding";
 import Handling from './components/eventhandlingConponent';
-import FormInput from "./components/formInputComponent"
+import FormInput from "./components/formInputComponent";
+import Transition from "./components/transition-Component"
 
 export default {
   data() {},
+  methods:{},
   components: {
     Form,
     BitCoin,
@@ -43,6 +48,7 @@ export default {
     ClassBinding,
     Handling,
     FormInput,
+    Transition,
   },
 };
 </script>
