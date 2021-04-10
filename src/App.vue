@@ -9,6 +9,7 @@
         <Directive></Directive>
         <Watch class="watch"></Watch>
         <Name></Name>
+        <ClassBinding></ClassBinding>
       </div>
     </div>
     <QiitaApi class="qiita"></QiitaApi>
@@ -22,6 +23,7 @@ import Directive from "./components/DirectiveComponent";
 import Watch from "./components/WatchComponent";
 import Name from "./components/nameComponent";
 import QiitaApi from "./components/qiitaApiComponent";
+import ClassBinding from "./components/classBinding"
 
 export default {
   data() {},
@@ -32,6 +34,7 @@ export default {
     Watch,
     Name,
     QiitaApi,
+    ClassBinding,
   },
 };
 </script>
