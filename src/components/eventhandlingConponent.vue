@@ -20,7 +20,13 @@
     複数条件 -->
     <input type="text" @keyup.esc.up.space="clear" v-model="message">
     <p>変数message: {{ message }}  </p>
+    <hr>
+    <p v-on:click.shift="clickHandler">シフトを押しながらクリックするとアラートが出る</p>
+    <hr>
+    <p>Ctrlkey + Cで文字クリア</p>
+    <input type="text" @keyup.ctrl.67="clear" v-model="message">
     </div>
+
   </div>
 </template>
 
@@ -54,6 +60,9 @@ export default {
     },
     clear(){
       this.message = ""
+    },
+    clickHandler(){
+      alert("shift + click")
     },
   },
 };
