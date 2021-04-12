@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ul class="display">
+  <div class="display">
+    <ul>
       <li><router-link to="/">TODOリスト</router-link></li>
       <li><router-link to="/bitcoin">Bitcoin</router-link></li>
       <li><router-link to="/directive">Directive</router-link></li>
@@ -11,7 +11,9 @@
       <li><router-link to="/handling">Handling</router-link></li>
       <li><router-link to="/forminput">FormInput</router-link></li>
       <li><router-link to="/transition">Transition</router-link></li>
+      <!-- 情報を持たせる name rootsのnameを指定 paramsで情報を渡せる -->
     </ul>
+    <router-link :to="{ name: 'users', params: { userId: user }}">{{ user }}へ移動</router-link>
     <router-view />
     <!-- <div class="container">
       <div class="main">
@@ -51,7 +53,11 @@
 // import VueRouter from "./components/vueRouterCompornent"
 
 export default {
-  data() {},
+  data() {
+    return{
+      user: 123,
+    }
+  },
   methods:{},
   components: {
     // Form,
@@ -71,7 +77,13 @@ export default {
 
 <style scoped>
 .display{
+  /* display: flex; */
+  width: 100%;
+  margin: 0 auto;
+}
+.display ul{
   display: flex;
+  justify-content: space-around;
 }
 .display li{
   margin: 5px;

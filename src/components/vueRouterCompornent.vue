@@ -1,18 +1,19 @@
 <template>
   <div>
-    <button @click="show=!show">VueRouter</button>
-    <div v-show="show">
-      <router-link to="/top">TOPへ</router-link>
-    </div>
+    <h2>user</h2>
+    <p>userId: {{ $route.params.userId }} </p>
+    <input type="text" v-model="profile">
+    <router-link :to="{ name: 'profile',params: { profileId: profile } }">{{ profile }}へ移動</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
   data() {
     return {
-      show: false
+      profile: 0,
     };
   },
   mounted() {

@@ -10,6 +10,8 @@ import ClassBinding from "./components/classBinding.vue";
 import Handling from './components/eventhandlingConponent.vue';
 import FormInput from "./components/formInputComponent.vue";
 import Transition from "./components/transition-Component.vue";
+import Users from "./components/vueRouterCompornent";
+import profile from "./components/profileComponent";
 
 Vue.use(Router);
 export default new Router({
@@ -57,6 +59,18 @@ export default new Router({
     {
       path: "/transition",
       component: Transition,
+    },
+    {
+      path: "/users/:userId",
+      name: "users",
+      component: Users,
+      children: [
+        {
+          path: "profile",
+          name: "profile",
+          component: profile
+        }
+      ]
     },
 
 
