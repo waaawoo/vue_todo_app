@@ -1,5 +1,9 @@
+
+
 import Vue from "vue";
 import Router from "vue-router";
+
+// 使用するコンポーネント
 import Form from "./components/Form_component.vue";
 import BitCoin from "./components/BitCoinComponent.vue";
 import Directive from "./components/DirectiveComponent.vue";
@@ -60,6 +64,7 @@ export default new Router({
       path: "/transition",
       component: Transition,
     },
+    // ネストされたルーティング
     {
       path: "/users/:userId",
       name: "users",
@@ -72,7 +77,15 @@ export default new Router({
         }
       ]
     },
-
+    // リダイレクト
+    // {
+    //   path: "/a",
+    //   redirect: "/b"
+    // },
+    // {
+    //   path: "b",
+    //   redirect: "/b"
+    // }
 
   ]
 });
